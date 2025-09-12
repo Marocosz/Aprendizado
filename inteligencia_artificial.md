@@ -1,11 +1,10 @@
 # Seção de Aprendizado
----
+
 ## Sumário
 - [📖 Livros](#-Livros)
 -
 -
 
----
 ## 📖 Livros
 
 <p style="color:gray;font-size:90%;">Clique nos títulos para acessar os links de download dos livros que estão no meu Drive </p>
