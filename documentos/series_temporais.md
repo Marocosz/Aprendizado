@@ -5,12 +5,14 @@
 Uma **série temporal** é uma sequência de observações registradas em momentos específicos no tempo.  
 Exemplos: vendas diárias de um produto, temperaturas mensais ou valores de ações ao longo de semanas.
 
+---
 
 ## 🧩 Estrutura
 
-- **Observações (yt):** Valores medidos em momentos *t*.  
+- **Observações (y_t):** Valores medidos em momentos *t*.  
 - **Tempo (t):** Pode ser diário, semanal, mensal, anual ou em intervalos irregulares.
 
+---
 
 ## 🎯 Utilidade e Quando Usar Séries Temporais
 
@@ -22,6 +24,7 @@ Séries temporais são úteis em cenários onde os dados variam ao longo do temp
 - **Decisão estratégica:** Apoiar campanhas, precificação e planejamento urbano.  
 - **Otimização:** Automatizar processos (produção, energia, transporte).  
 
+---
 
 ## 🔎 Componentes de Séries Temporais
 
@@ -37,6 +40,7 @@ Séries temporais são úteis em cenários onde os dados variam ao longo do temp
 4. **🎲 Resíduo (Noise):** Variações aleatórias.  
    Ex: Oscilações inesperadas em vendas diárias.  
 
+---
 
 ## 🧮 Tipos de Séries Temporais
 
@@ -46,15 +50,18 @@ Séries temporais são úteis em cenários onde os dados variam ao longo do temp
 - **Multivariada:** Múltiplas variáveis inter-relacionadas.  
   Ex: Preço de ação + taxa de juros + volume de negociação.  
 
+---
 
 ## ⚖️ Estacionaridade
 
 Uma série é **estacionária** quando suas propriedades estatísticas não mudam ao longo do tempo:  
+
 - Média constante  
 - Variância constante  
 - Autocovariância constante  
 
 ### Testes de Estacionaridade
+
 - **ADF (Dickey-Fuller Aumentado):**  
   - H0: série não estacionária  
   - H1: série estacionária  
@@ -66,16 +73,23 @@ Uma série é **estacionária** quando suas propriedades estatísticas não muda
 - **Phillips-Perron (PP):** Mais robusto à heterocedasticidade.  
 
 ### Tornando uma série estacionária
-- Diferenciação:
-  $ y'_t = y_t - y_{t-1} $
 
-- Transformação logarítmica:
-  $ y'_t = \log(y_t) $
+- **Diferenciação:**
+$$
+\Delta y_t = y_t - y_{t-1}
+$$
 
-- Diferenciação sazonal:
-  $ y'_t = y_t - y_{t-S} $
+- **Transformação logarítmica:**
+$$
+y_t' = \log(y_t)
+$$
 
+- **Diferenciação sazonal:**
+$$
+\Delta_s y_t = y_t - y_{t-S}
+$$
 
+---
 
 ## 📊 Modelos e Técnicas
 
@@ -94,7 +108,6 @@ Representado como:
 - **MA (q):** Média móvel dos erros.  
 
 Exemplo de previsão:
-
 $$
 y_t = c + \phi_1 y_{t-1} + \dots + \phi_p y_{t-p} + \theta_1 \varepsilon_{t-1} + \dots + \theta_q \varepsilon_{t-q} + \varepsilon_t
 $$
@@ -108,36 +121,47 @@ Inclui sazonalidade:
 
 ## 🔬 Etapas Práticas de Análise
 
-1. **📥 Importar e Visualizar Dados**  
-   - Gráfico de linha  
-   - Histogramas / Boxplots  
-   - ACF / PACF  
-   - Decomposição da série  
+### 1. 📥 Importar e Visualizar Dados  
+- Gráfico de linha  
+- Histogramas / Boxplots  
+- ACF / PACF  
+- Decomposição da série  
 
-2. **📉 Verificar Estacionaridade**  
-   - Visualização gráfica  
-   - Rolling mean/variance  
-   - Testes estatísticos  
+### 2. 📉 Verificar Estacionaridade  
+- Visualização gráfica  
+- Rolling mean/variance  
+- Testes estatísticos  
 
-3. **🔎 Decomposição**  
-   - **Aditiva:** $y_t = T_t + S_t + e_t$
-   - **Multiplicativa:** $y_t = T_t \times S_t \times e_t$
+### 3. 🔎 Decomposição  
 
-1. **⚙️ Modelagem**  
-   - ARIMA, SARIMA, LSTM, Prophet...  
+- **Aditiva:**
+$$
+y_t = T_t + S_t + e_t
+$$
+- **Multiplicativa:**
+$$
+y_t = T_t \times S_t \times e_t
+$$
 
-2. **📏 Avaliação**  
-   - Divisão sequencial (treino/teste)  
-   - Métricas:  
+### 4. ⚙️ Modelagem  
+- ARIMA, SARIMA, LSTM, Prophet...  
 
-     - **RMSE:**  
-       $RMSE = \sqrt{\frac{1}{n} \sum_{t=1}^n (y_t - \hat{y}_t)^2}$
-       
-     - **MAE:**  
-       $MAE = \frac{1}{n} \sum_{t=1}^n |y_t - \hat{y}_t|$
+### 5. 📏 Avaliação  
+- Divisão sequencial (treino/teste)  
+- Métricas:  
 
-     - **MAPE:**  
-       $MAPE = \frac{100}{n} \sum_{t=1}^n \left| \frac{y_t - \hat{y}_t}{y_t} \right|$
+**RMSE:**  
+$$
+RMSE = \sqrt{\frac{1}{n} \sum_{t=1}^n (y_t - \hat{y}_t)^2}
+$$
+**MAE:**  
+$$
+MAE = \frac{1}{n} \sum_{t=1}^n |y_t - \hat{y}_t|
+$$
+**MAPE:**  
+$$
+MAPE = \frac{100}{n} \sum_{t=1}^n \left| \frac{y_t - \hat{y}_t}{y_t} \right|
+$$
 
 ---
 
@@ -160,13 +184,11 @@ Exemplo: "compra ou não compra", "fraude ou não fraude".
 ## 🧮 Fórmula Matemática
 
 A probabilidade é modelada pela **função sigmoide**:
-
 $$
 p = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_1 + \dots + \beta_n x_n)}}
 $$
 
 Classificação final:
-
 $$
 Classe =
 \begin{cases}
@@ -179,9 +201,9 @@ $$
 
 ## 📌 Assunções do Modelo
 
-- Relação linear entre variáveis independentes e logit.  
-- Observações independentes.  
-- Ausência de multicolinearidade.  
+- Relação linear entre variáveis independentes e logit  
+- Observações independentes  
+- Ausência de multicolinearidade  
 
 ---
 
@@ -196,10 +218,10 @@ $$
 
 ## 🌍 Aplicações Práticas
 
-- **Medicina:** Diagnóstico de doenças.  
-- **Marketing:** Previsão de churn.  
-- **Financeiro:** Inadimplência em empréstimos.  
-- **RH:** Aprovação de candidatos.  
+- **Medicina:** Diagnóstico de doenças  
+- **Marketing:** Previsão de churn  
+- **Financeiro:** Inadimplência em empréstimos  
+- **RH:** Aprovação de candidatos  
 
 ---
 
@@ -220,11 +242,9 @@ $$
 p = \frac{1}{1 + e^{-z}}
 $$
 
-- Cliente A (25 anos, $20k) → $p = 0.20$ → Não comprador.  
-- Cliente B (45 anos, $50k) → $p = 0.85$ → Comprador.  
+- Cliente A (25 anos, $20k) → p = 0.20 → Não comprador  
+- Cliente B (45 anos, $50k) → p = 0.85 → Comprador  
 
 **Interpretação dos coeficientes:**  
-- $\beta_1 = 0.03$: cada ano aumenta 3% na chance de compra.  
-- $\beta_2 = 0.1$: cada $1000$ a mais de renda aumenta 10.5% na chance de compra.  
-
----
+- $\beta_1 = 0.03$: cada ano aumenta 3% na chance de compra  
+- $\beta_2 = 0.1$: cada $1000$ a mais de renda aumenta 10.5% na chance de compra
