@@ -5,14 +5,12 @@
 Uma **série temporal** é uma sequência de observações registradas em momentos específicos no tempo.  
 Exemplos: vendas diárias de um produto, temperaturas mensais ou valores de ações ao longo de semanas.
 
----
 
 ## 🧩 Estrutura
 
 - **Observações (yt):** Valores medidos em momentos *t*.  
 - **Tempo (t):** Pode ser diário, semanal, mensal, anual ou em intervalos irregulares.
 
----
 
 ## 🎯 Utilidade e Quando Usar Séries Temporais
 
@@ -24,7 +22,6 @@ Séries temporais são úteis em cenários onde os dados variam ao longo do temp
 - **Decisão estratégica:** Apoiar campanhas, precificação e planejamento urbano.  
 - **Otimização:** Automatizar processos (produção, energia, transporte).  
 
----
 
 ## 🔎 Componentes de Séries Temporais
 
@@ -40,7 +37,6 @@ Séries temporais são úteis em cenários onde os dados variam ao longo do temp
 4. **🎲 Resíduo (Noise):** Variações aleatórias.  
    Ex: Oscilações inesperadas em vendas diárias.  
 
----
 
 ## 🧮 Tipos de Séries Temporais
 
@@ -50,7 +46,6 @@ Séries temporais são úteis em cenários onde os dados variam ao longo do temp
 - **Multivariada:** Múltiplas variáveis inter-relacionadas.  
   Ex: Preço de ação + taxa de juros + volume de negociação.  
 
----
 
 ## ⚖️ Estacionaridade
 
@@ -72,19 +67,15 @@ Uma série é **estacionária** quando suas propriedades estatísticas não muda
 
 ### Tornando uma série estacionária
 - Diferenciação:  
-  $$
-  y'_t = y_t - y_{t-1}
-  $$
-- Transformação logarítmica:  
-  $$
-  y'_t = \log(y_t)
-  $$
-- Diferenciação sazonal:  
-  $$
-  y'_t = y_t - y_{t-S}
-  $$
+  $y'_t = y_t - y_{t-1}$
 
----
+- Transformação logarítmica:  
+  $y'_t = \log(y_t)$
+
+- Diferenciação sazonal:  
+  $y'_t = y_t - y_{t-S}$
+
+
 
 ## 📊 Modelos e Técnicas
 
