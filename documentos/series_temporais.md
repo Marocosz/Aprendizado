@@ -67,7 +67,6 @@ Uma série é **estacionária** quando suas propriedades estatísticas não muda
 
 ### Tornando uma série estacionária
 - Diferenciação:
-- 
   $ y'_t = y_t - y_{t-1} $
 
 - Transformação logarítmica:
@@ -121,34 +120,24 @@ Inclui sazonalidade:
    - Testes estatísticos  
 
 3. **🔎 Decomposição**  
-   - **Aditiva:**  
-     $$
-     y_t = T_t + S_t + e_t
-     $$
-   - **Multiplicativa:**  
-     $$
-     y_t = T_t \times S_t \times e_t
-     $$
+   - **Aditiva:** $y_t = T_t + S_t + e_t$
+   - **Multiplicativa:** $y_t = T_t \times S_t \times e_t$
 
-4. **⚙️ Modelagem**  
+1. **⚙️ Modelagem**  
    - ARIMA, SARIMA, LSTM, Prophet...  
 
-5. **📏 Avaliação**  
+2. **📏 Avaliação**  
    - Divisão sequencial (treino/teste)  
    - Métricas:  
 
      - **RMSE:**  
-       $$
-       RMSE = \sqrt{\frac{1}{n} \sum_{t=1}^n (y_t - \hat{y}_t)^2}
-       $$
+       $RMSE = \sqrt{\frac{1}{n} \sum_{t=1}^n (y_t - \hat{y}_t)^2}$
+       
      - **MAE:**  
-       $$
-       MAE = \frac{1}{n} \sum_{t=1}^n |y_t - \hat{y}_t|
-       $$
+       $MAE = \frac{1}{n} \sum_{t=1}^n |y_t - \hat{y}_t|$
+
      - **MAPE:**  
-       $$
-       MAPE = \frac{100}{n} \sum_{t=1}^n \left| \frac{y_t - \hat{y}_t}{y_t} \right|
-       $$
+       $MAPE = \frac{100}{n} \sum_{t=1}^n \left| \frac{y_t - \hat{y}_t}{y_t} \right|$
 
 ---
 
