@@ -21,7 +21,7 @@ A ideia é manter um registro centralizado e acessível, que me ajude a revisar 
 Uma série temporal é uma sequência de observações registradas em momentos específicos no tempo.
 Exemplo: vendas diárias de um produto, temperaturas mensais ou valores de ações ao longo de semanas.
 
-**Detalhes:** <a href="documentos/series_temporais.md" target="_blank">Séries Temporais</a>
+**Detalhes:** <a href="documentos/series_temporais.pdf" target="_blank">Séries Temporais</a>
 
 
 ## 📖 Livros
