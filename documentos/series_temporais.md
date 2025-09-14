@@ -66,14 +66,15 @@ Uma série é **estacionária** quando suas propriedades estatísticas não muda
 - **Phillips-Perron (PP):** Mais robusto à heterocedasticidade.  
 
 ### Tornando uma série estacionária
-- Diferenciação:  
-  $y'_t = y_t - y_{t-1}$
+- Diferenciação:
+- 
+  $ y'_t = y_t - y_{t-1} $
 
-- Transformação logarítmica:  
-  $y'_t = \log(y_t)$
+- Transformação logarítmica:
+  $ y'_t = \log(y_t) $
 
-- Diferenciação sazonal:  
-  $y'_t = y_t - y_{t-S}$
+- Diferenciação sazonal:
+  $ y'_t = y_t - y_{t-S} $
 
 
 
@@ -93,7 +94,8 @@ Representado como:
 - **I (d):** Diferenciações para estacionaridade.  
 - **MA (q):** Média móvel dos erros.  
 
-Exemplo de previsão:  
+Exemplo de previsão:
+
 $$
 y_t = c + \phi_1 y_{t-1} + \dots + \phi_p y_{t-p} + \theta_1 \varepsilon_{t-1} + \dots + \theta_q \varepsilon_{t-q} + \varepsilon_t
 $$
