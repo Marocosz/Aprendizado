@@ -6,15 +6,22 @@ Aqui organizo **anotações, métodos, livros, resumos e materiais** que utilizo
 A ideia é manter um registro centralizado e acessível, que me ajude a revisar conteúdos, acompanhar meu progresso e ter sempre à mão referências importantes para meus estudos e projetos.
 
 
-## Sumário
+## 📜 Sumário
 
 - [📚 Repositório de Estudos](#-repositório-de-estudos)
-  - [Sumário](#sumário)
+  - [📜 Sumário](#-sumário)
   - [✏️ Conteúdos](#️-conteúdos)
+    - [Séries Temporais](#séries-temporais)
   - [📖 Livros](#-livros)
 
 ## ✏️ Conteúdos
 
+### Séries Temporais
+
+Uma série temporal é uma sequência de observações registradas em momentos específicos no tempo.
+Exemplo: vendas diárias de um produto, temperaturas mensais ou valores de ações ao longo de semanas.
+
+**Detalhes:** <a href="documentos/series_temporais.md" target="_blank">Séries Temporais</a>
 
 
 ## 📖 Livros
