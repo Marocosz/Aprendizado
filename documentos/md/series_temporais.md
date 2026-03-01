@@ -114,11 +114,11 @@ A visualização de dados é uma etapa essencial, pois permite identificar padr�
 ### Etapa 3: Decomposição
 
 1. **Decomposição Aditiva:**
-   $Y_t = Trend_t + Seasonal_t + Residual_t$
+   $$ Y_t = Trend_t + Seasonal_t + Residual_t $$
    Usada quando a **amplitude da sazonalidade é constante**. Ex: Temperatura média diária.
 
 2. **Decomposição Multiplicativa:**
-   $Y_t = Trend_t \times Seasonal_t \times Residual_t$
+   $$ Y_t = Trend_t \times Seasonal_t \times Residual_t $$
    Aplicada quando a **sazonalidade varia em intensidade**. Ex: Receita de uma empresa em forte crescimento.
 
 ### Etapa 4: Modelagem
