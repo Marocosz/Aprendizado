@@ -51,7 +51,7 @@ $$\text{Acurácia global} = \frac{\text{Nº total de tuplas corretamente classif
 
 **Vantagem sobre o Holdout:** Todos os exemplos são usados tanto para treino quanto para teste, reduzindo a variância da estimativa de desempenho.
 
-![Cross-validation](images/cross-validation.png)
+![Cross-validation](../images/cross-validation.png)
 
 ---
 
