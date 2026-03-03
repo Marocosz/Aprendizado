@@ -100,6 +100,24 @@ O n8n gerencia o processamento e a memória de maneira diferente dependendo de c
 * **Execução Manual (Test Workflow/Step):** O n8n guarda **todos** os dados de **todos** os nós na memória RAM do seu navegador para que você possa inspecionar o Input/Output de cada um. É um processo mais "pesado", mas indispensável para debugar e construir a automação.
 * **Execução de Produção (Active):** O n8n opera de forma otimizada. Ele descarta os dados da memória assim que o nó termina sua função (a menos que outra parte do fluxo precise deles mais à frente). Isso poupa CPU e RAM do servidor, garantindo que fluxos gigantes operem com fluidez sem derrubar a infraestrutura.
 
+### Dados Fixados (Pin Data / Nós Pinados)
+
+> **A Analogia:** Lembra da nossa fábrica? Imagine que você está testando uma máquina nova que pinta caixas de vermelho. Em vez de ligar para o fornecedor e pedir *"Por favor, mande um caminhão de caixas reais para eu testar a máquina"* toda vez que for fazer um ajuste, você pega uma caixa velha, coloca nela um adesivo escrito "MOLDE DE TESTE" (o Pin) e deixa ela ali do lado da máquina. Sempre que quiser testar, você joga essa mesma caixa na esteira.
+
+**Na Prática:** Quando você "pina" (fixa) dados em um nó, você está **congelando uma amostra de dados (`JSON`) dentro dele**. Você tira uma "foto" de uma execução que deu certo no passado e salva essa foto no nó (um ícone de percevejo/alfinete aparecerá sobre ele).
+
+**O Impacto: Nó Pinado vs. Não Pinado**
+
+A diferença vital aparece durante a construção e correção (debug) do fluxo, ao usar a "Execução Manual" (botões *Test Step* ou *Test Workflow*).
+
+* 🔴 **Nó NÃO Pinado (Comportamento Normal):** O n8n vai tentar executar a função real do nó. Se for um Webhook, ele ficará carregando infinitamente, esperando que um sistema externo mande uma mensagem. Se for um banco de dados, ele fará uma requisição real que consome processamento. Fazer testes assim é lento e depende de estímulos externos (ex: mandar mensagens reais no seu próprio WhatsApp a cada 5 minutos).
+* 🟢 **Nó PINADO (Comportamento de Teste):** O n8n **ignora a função real e técnica do nó**. Ele não espera Webhooks e não chama APIs externas. Ele simplesmente "cospe" aquele pacote `JSON` que você deixou congelado nele e injeta na esteira imediatamente. Isso permite testar o resto do fluxo infinitas vezes, em segundos, sem gastar requisições.
+
+> [!WARNING]
+> **A Regra de Ouro (O Mito da Produção):** Muitos desenvolvedores têm medo de usar o Pin Data achando que, se esquecerem o nó pinado, os clientes reais vão receber a resposta do "molde" quando o fluxo for para o ar. **Isso é um mito.**
+> 1. **Em modo de Teste (Execução Manual):** O n8n **usa** os dados pinados para simular a esteira.
+> 2. **Em modo de Produção (Fluxo Ativo / Active):** O n8n **ignora completamente** os dados pinados. Quando ativado no mundo real, o n8n sabe que é "para valer", descarta o molde e processa exclusivamente os dados frescos que entrarem naquele milissegundo.
+
 ---
 
 ## Famílias de Nós

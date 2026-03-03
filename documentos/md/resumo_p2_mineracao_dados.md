@@ -1,5 +1,45 @@
 # Resumo: Mineração de Dados (P2)
 
+- [Resumo: Mineração de Dados (P2)](#resumo-mineração-de-dados-p2)
+  - [Parte 1: Avaliação de Desempenho de Modelos de Classificação](#parte-1-avaliação-de-desempenho-de-modelos-de-classificação)
+    - [1. Métodos de Particionamento de Dados](#1-métodos-de-particionamento-de-dados)
+      - [1.1. Método Holdout](#11-método-holdout)
+      - [1.2. Validação Cruzada (_k-fold Cross-Validation_)](#12-validação-cruzada-k-fold-cross-validation)
+    - [2. Matriz de Confusão](#2-matriz-de-confusão)
+    - [3. Métricas de Classificação](#3-métricas-de-classificação)
+      - [3.1. Acurácia (_Accuracy_)](#31-acurácia-accuracy)
+      - [3.2. Sensibilidade, Recall ou Taxa de Verdadeiros Positivos (_Sensitivity / Recall / TPR_)](#32-sensibilidade-recall-ou-taxa-de-verdadeiros-positivos-sensitivity--recall--tpr)
+      - [3.3. Precisão (_Precision_)](#33-precisão-precision)
+      - [3.4. Especificidade (_Specificity / True Negative Rate_)](#34-especificidade-specificity--true-negative-rate)
+      - [3.5. F1-Score (Medida-F)](#35-f1-score-medida-f)
+  - [Parte 2: Regras de Associação](#parte-2-regras-de-associação)
+    - [1. Introdução e Motivação](#1-introdução-e-motivação)
+    - [2. Conceitos Fundamentais](#2-conceitos-fundamentais)
+      - [2.1. Itens e Conjunto de Itens (_Itemset_)](#21-itens-e-conjunto-de-itens-itemset)
+      - [2.2. Suporte (_Support_)](#22-suporte-support)
+      - [2.3. Confiança (_Confidence_)](#23-confiança-confidence)
+      - [2.4. Itemset Frequente (_Frequent Itemset_)](#24-itemset-frequente-frequent-itemset)
+      - [2.5. Regra de Associação](#25-regra-de-associação)
+    - [3. O Problema da Mineração de Regras de Associação](#3-o-problema-da-mineração-de-regras-de-associação)
+    - [4. Propriedade Antimonótona do Suporte (_Apriori Property_)](#4-propriedade-antimonótona-do-suporte-apriori-property)
+    - [5. Algoritmo Apriori](#5-algoritmo-apriori)
+      - [5.1. Geração de Regras a partir de Itemsets Frequentes](#51-geração-de-regras-a-partir-de-itemsets-frequentes)
+      - [5.2. Complexidade e Limitações do Apriori](#52-complexidade-e-limitações-do-apriori)
+    - [6. Algoritmo FP-Growth (_Frequent Pattern Growth_)](#6-algoritmo-fp-growth-frequent-pattern-growth)
+    - [7. Métricas de Interesse e Qualidade das Regras](#7-métricas-de-interesse-e-qualidade-das-regras)
+      - [7.1. Lift (Elevação)](#71-lift-elevação)
+      - [7.2. Leverage (Alavancagem)](#72-leverage-alavancagem)
+      - [7.3. Convicção (_Conviction_)](#73-convicção-conviction)
+      - [7.4. Tabela Comparativa das Métricas](#74-tabela-comparativa-das-métricas)
+    - [8. Regras de Associação Multidimensionais](#8-regras-de-associação-multidimensionais)
+    - [9. Regras de Associação com Restrições](#9-regras-de-associação-com-restrições)
+    - [10. Pós-Processamento e Interpretação das Regras](#10-pós-processamento-e-interpretação-das-regras)
+    - [11. Resumo Visual do Processo](#11-resumo-visual-do-processo)
+    - [12. Exemplo Completo e Integrado](#12-exemplo-completo-e-integrado)
+    - [13. Comparação: Regras de Associação vs. Classificação](#13-comparação-regras-de-associação-vs-classificação)
+  - [Parte 3: K-Means](#parte-3-k-means)
+
+
 ## Parte 1: Avaliação de Desempenho de Modelos de Classificação
 
 A fase de avaliação de desempenho é fundamental após a construção de um modelo de classificação (fase de treinamento). O modelo é aplicado em um **conjunto de testes** para prever os rótulos de classes de registros não vistos anteriormente. O principal objetivo é medir o desempenho do modelo em dados inéditos, fornecendo uma estimativa imparcial do seu erro e de sua capacidade de generalização.
@@ -683,3 +723,7 @@ Lift ≈ 1 → os dois itens são praticamente independentes nesta base pequena.
 | Objetivo           | Descobrir padrões de co-ocorrência        | Aprender a classificar novos exemplos |
 | Avaliação          | Suporte, Confiança, Lift                  | Acurácia, F1, Recall, Precisão        |
 | Algoritmos Típicos | Apriori, FP-Growth, ECLAT                 | Árvores de Decisão, KNN, SVM          |
+
+
+## Parte 3: K-Means
+
