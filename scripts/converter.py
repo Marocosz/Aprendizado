@@ -313,6 +313,34 @@ class DocumentConverter:
 
         return temp_md
 
+    def _preprocess_markdown(self, md_text):
+        """
+        Garante linha em branco antes de listas e tabelas quando seguem um parágrafo sem separação.
+        A biblioteca Python Markdown exige essa linha em branco para reconhecer listas/tabelas corretamente.
+        """
+        import re
+        lines = md_text.split('\n')
+        result = []
+
+        for line in lines:
+            stripped = line.strip()
+            prev = result[-1].strip() if result else ''
+
+            is_list   = bool(re.match(r'^[-*+]\s', stripped)) or bool(re.match(r'^\d+[.)]\s', stripped))
+            is_table  = stripped.startswith('|') and stripped.endswith('|')
+
+            prev_is_list  = bool(re.match(r'^[-*+]\s', prev)) or bool(re.match(r'^\d+[.)]\s', prev))
+            prev_is_table = prev.startswith('|') and prev.endswith('|')
+            prev_is_blank = prev == ''
+
+            if (is_list and not prev_is_list and not prev_is_blank) or \
+               (is_table and not prev_is_table and not prev_is_blank):
+                result.append('')
+
+            result.append(line)
+
+        return '\n'.join(result)
+
     def _markdown_to_html(self, input_path):
         """
         Converte Markdown para HTML com renderização idêntica ao GitHub.
@@ -324,13 +352,14 @@ class DocumentConverter:
         with open(input_path, "r", encoding="utf-8") as f:
             md_content = f.read()
 
+        md_content = self._preprocess_markdown(md_content)
+
         # Extensões que replicam o GitHub Flavored Markdown
         extensions = [
             'tables',           # tabelas estilo GFM
             'fenced_code',      # blocos de código com ```
             'codehilite',       # syntax highlighting via Pygments
             'toc',              # âncoras nos títulos
-            'nl2br',            # quebras de linha como <br>
             'sane_lists',       # listas mais previsíveis
             'attr_list',        # {: .classe } em elementos
         ]
