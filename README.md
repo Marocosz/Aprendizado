@@ -11,7 +11,7 @@ A ideia é manter um registro centralizado e acessível, que me ajude a revisar 
 
 - [✏️ Conteúdos](#️-conteúdos)
   - [Agents Stack](#agents-stack)
-  - [Skills do Claude](#skills-do-claude)
+  - [Claude Code — Guia Avançado](#claude-code--guia-avançado)
   - [n8n](#n8n)
   - [Supabase](#supabase)
   - [Mineração e Classificação de Dados](#mineração-e-classificação-de-dados)
@@ -36,11 +36,11 @@ Referência completa sobre os principais conceitos, padrões e ferramentas para 
 
 ---
 
-### Skills do Claude
+### Claude Code — Guia Avançado
 
-Guia completo sobre o sistema de Skills nos três ambientes do Claude: Claude.ai, Claude Code e a API da Anthropic. Criação, configuração e uso de skills personalizadas.
+Guia avançado de produtividade com Claude Code cobrindo claude.ai, VS Code (extensão/API) e CLI — skills, tokens, prompt engineering, organização de contexto e workflows reais.
 
-📄 [Ler em Markdown](documentos/md/skills_claude.md) · [Versão PDF](documentos/pdf/skills_claude.pdf)
+📄 [Ler em Markdown](documentos/md/claude-code-guia-avancado.md) · [Versão PDF](documentos/pdf/claude-code-guia-avancado.pdf)
 
 ---
 
